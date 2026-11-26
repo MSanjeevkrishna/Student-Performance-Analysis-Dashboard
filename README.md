@@ -5,8 +5,8 @@ This project explores how student habits relate to exam performance. It uses Pyt
 
 ## 📂 Dataset
 * **File:** `StudentPerformanceFactors.csv`
-* **Size:** 6,607 student records and 20 columns
-* **Columns analyzed:** `Hours_Studied`, `Sleep_Hours`, `Physical_Activity`, `Exam_Score`
+* **Size:** 6,607 student records and 20 columns (6,606 analyzed after removing a score above 100)
+* **Columns analyzed:** `Hours_Studied`, `Attendance`, `Sleep_Hours`, `Physical_Activity`, `Exam_Score`
 
 ## 🛠️ Tech Stack
 * **Python:** Pandas, Matplotlib, Seaborn
@@ -16,24 +16,27 @@ This project explores how student habits relate to exam performance. It uses Pyt
 ## ⚙️ Workflow
 1. Load the CSV file with Pandas.
 2. Store it in an in-memory SQLite table.
-3. Select the required columns with a SQL query.
+3. Select the required columns with a SQL query and filter out exam scores above 100.
 4. Plot study hours, sleep hours and physical activity against exam score.
 5. Export `Cleaned_Student_Data_for_PowerBI.csv` for the Power BI dashboard.
 
 ## 📊 Dashboard Preview
-Open "interactive dashboard.pbix" in Power BI Desktop to explore it.
+Open `interactive dashboard.pbix` in Power BI Desktop to explore it.
+
 ![Power BI Dashboard](./interactive%20dashboard.png)
 
-The dashboard includes a scatter plot of study hours and exam score, an average exam score card, and filters for study hours and sleep hours.
+The dashboard includes a scatter plot of study hours and exam score, a line chart of average exam score by attendance, an average exam score card, and filters for study hours and sleep hours.
 
 ## 🔍 Key Findings
 | Factor | Correlation with exam score |
 |---|---|
+| Attendance | 0.58 (moderate positive) |
 | Hours studied | 0.45 (moderate positive) |
 | Physical activity | 0.03 (almost none) |
 | Sleep hours | -0.02 (almost none) |
 
-* The average exam score is **67.24**.
+* The average exam score is **67.23**.
+* The average score rises from about **62.4** at 60% attendance to about **70.8** at 100% attendance.
 * Correlation shows a relationship, not proof of cause.
 
 ## 🚀 How to Run
