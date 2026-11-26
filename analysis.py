@@ -1,6 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-import seaborn as sns   
+import seaborn as sns
 import sqlite3
 
 # 1. Setup SQL Database in memory
@@ -11,7 +11,8 @@ df_raw = pd.read_csv("StudentPerformanceFactors.csv")
 df_raw.to_sql('students', conn, index=False, if_exists='replace')
 
 # 3. Use SQL to "Query" the data back into Python
-query = "SELECT Hours_Studied, Sleep_Hours, Physical_Activity, Exam_Score FROM students"
+query = """SELECT Hours_Studied, Attendance, Sleep_Hours, Physical_Activity, Exam_Score
+FROM students WHERE Exam_Score <= 100"""
 df = pd.read_sql_query(query, conn)
 
 # 3. Create the Student Habits Dashboard
