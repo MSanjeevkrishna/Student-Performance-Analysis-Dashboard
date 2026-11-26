@@ -34,6 +34,7 @@ axes[2].set_title('Physical Activity vs. Average Score')
 
 plt.tight_layout(rect=[0, 0.03, 1, 0.95])
 plt.show()
+print(df.corr()['Exam_Score'].round(2))
 
 # 4. Export for Power BI
 df.to_csv("Cleaned_Student_Data_for_PowerBI.csv", index=False)
