@@ -21,6 +21,7 @@ This project explores how student habits relate to exam performance. It uses Pyt
 5. Export `Cleaned_Student_Data_for_PowerBI.csv` for the Power BI dashboard.
 
 ## 📊 Dashboard Preview
+Open "interactive dashboard.pbix" in Power BI Desktop to explore it.
 ![Power BI Dashboard](./interactive%20dashboard.png)
 
 The dashboard includes a scatter plot of study hours and exam score, an average exam score card, and filters for study hours and sleep hours.
